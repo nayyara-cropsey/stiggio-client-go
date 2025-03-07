@@ -1,0 +1,22 @@
+model:
+  package: stigg
+  filename: ./generated_models.go
+client:
+  package: stigg
+  filename: ./generated_client.go
+models:
+  Int:
+    model: github.com/99designs/gqlgen/graphql.Int64
+  Date:
+    model: github.com/99designs/gqlgen/graphql.Time
+federation:
+  version: 2
+schema:
+  - "schema/**/*.graphql"
+query:
+  - "./query/*.graphql"
+generate:
+  clientInterfaceName: "StiggClient"
+  structFieldsAlwaysPointers: true
+  onlyUsedModels: true
+  enableClientJsonOmitemptyTag: true

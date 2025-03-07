@@ -1,0 +1,27 @@
+query GetPlans {
+  plans(filter: {status:{eq:PUBLISHED}, and:{isLatest:{is:true}}}) {
+    totalCount
+    edges {
+      cursor
+      node {
+        id
+        refId
+        displayName
+        description
+        isLatest
+        productId
+        status
+        type
+        createdAt
+        updatedAt
+        versionNumber
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}
